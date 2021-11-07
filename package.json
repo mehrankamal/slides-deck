@@ -6,14 +6,19 @@
   "scripts": {
     "gulp": "gulp",
     "build": "gulp build",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "dev": "gulp dev"
   },
   "author": "Mehran Kamal",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.27.7",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-pug": "^5.0.0",
     "pug": "^3.0.2"
+  },
+  "dependencies": {
+    "reveal.js": "^4.1.3"
   }
 }

@@ -1,0 +1,377 @@
+html 
+    head 
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        - var title = "Demo"
+        title #title - Slides Deck
+        link(rel="stylesheet" href="/reveal.js/dist/reveal.css")
+
+        block styles
+            link(rel="stylesheet" href="/reveal.js/dist/theme/white.css" id="theme")
+
+            link(rel="stylesheet" href="/reveal.js/plugin/highlight/monokai.css")
+
+    body 
+        .reveal 
+            .slides
+                block slide-sections
+                    section
+                        a(href='https://revealjs.com')
+                            img.demo-logo(src='https://static.slid.es/reveal/logo-v1/reveal-white-text.svg' alt='reveal.js logo' style='height: 180px; margin: 0 auto 4rem auto; background: transparent;')
+                        h3 The HTML Presentation Framework
+                        p
+                            small
+                                | Created by 
+                                a(href='http://hakim.se') Hakim El Hattab
+                                |  and 
+                                a(href='https://github.com/hakimel/reveal.js/graphs/contributors') contributors
+                    section
+                        h2 Hello There
+                        p
+                            | reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
+                    // Example of nested vertical slides
+                    section
+                        section
+                            h2 Vertical Slides
+                            p Slides can be nested inside of each other.
+                            p
+                                | Use the 
+                                em Space
+                                |  key to navigate through all slides.
+                            br
+                            a.navigate-down(href='#')
+                                img.r-frame(style='background: rgba(255,255,255,0.1);' width='178' height='238' data-src='https://static.slid.es/reveal/arrow.png' alt='Down arrow')
+                        section
+                            h2 Basement Level 1
+                            p
+                                | Nested slides are useful for adding additional detail underneath a high level horizontal slide.
+                        section
+                            h2 Basement Level 2
+                            p That&apos;s it, time to go back up.
+                            br
+                            a(href='#/2')
+                                img.r-frame(style='background: rgba(255,255,255,0.1); transform: rotate(180deg);' width='178' height='238' data-src='https://static.slid.es/reveal/arrow.png' alt='Up arrow')
+                    section
+                        h2 Slides
+                        p
+                            | Not a coder? Not a problem. There&apos;s a fully-featured visual editor for authoring these, try it out at 
+                            a(href='https://slides.com' target='_blank') https://slides.com
+                            | .
+                    section(data-visibility='hidden')
+                        h2 Hidden Slides
+                        p
+                            | This slide is visible in the source, but hidden when the presentation is viewed. You can show all hidden slides by setting the &grave;showHiddenSlides&grave; config option to &grave;true&grave;.
+                    section(data-auto-animate='')
+                        h2(data-id='code-title') Pretty Code
+                        pre(data-id='code-animation').
+
+                        p
+                            | Code syntax highlighting courtesy of 
+                            a(href='https://highlightjs.org/usage/') highlight.js
+                            | .
+                    section(data-auto-animate='')
+                        h2(data-id='code-title') With animations
+                        pre(data-id='code-animation').
+
+                    section
+                        h2 Point of View
+                        p
+                            | Press 
+                            strong ESC
+                            |  to enter the slide overview.
+                        p
+                            | Hold down the 
+                            strong alt
+                            |  key (
+                            strong ctrl
+                            |  in Linux) and click on any element to zoom towards it using 
+                            a(href='http://lab.hakim.se/zoom-js') zoom.js
+                            | . Click again to zoom back out.
+                        p
+                            | (NOTE: Use ctrl + click in Linux.)
+                    section(data-auto-animate='' data-auto-animate-easing='cubic-bezier(0.770, 0.000, 0.175, 1.000)')
+                        h2 Auto-Animate
+                        p
+                            | Automatically animate matching elements across slides with 
+                            a(href='https://revealjs.com/auto-animate/') Auto-Animate
+                            | .
+                        .r-hstack.justify-center
+                            div(data-id='box1' style='background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;')
+                            div(data-id='box2' style='background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;')
+                            div(data-id='box3' style='background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;')
+                    section(data-auto-animate='' data-auto-animate-easing='cubic-bezier(0.770, 0.000, 0.175, 1.000)')
+                        .r-hstack.justify-center
+                            div(data-id='box1' data-auto-animate-delay='0' style='background: cyan; width: 150px; height: 100px; margin: 10px;')
+                            div(data-id='box2' data-auto-animate-delay='0.1' style='background: magenta; width: 150px; height: 100px; margin: 10px;')
+                            div(data-id='box3' data-auto-animate-delay='0.2' style='background: yellow; width: 150px; height: 100px; margin: 10px;')
+                        h2(style='margin-top: 20px;') Auto-Animate
+                    section(data-auto-animate='' data-auto-animate-easing='cubic-bezier(0.770, 0.000, 0.175, 1.000)')
+                        .r-stack
+                            div(data-id='box1' style='background: cyan; width: 300px; height: 300px; border-radius: 200px;')
+                            div(data-id='box2' style='background: magenta; width: 200px; height: 200px; border-radius: 200px;')
+                            div(data-id='box3' style='background: yellow; width: 100px; height: 100px; border-radius: 200px;')
+                        h2(style='margin-top: 20px;') Auto-Animate
+                    section
+                        h2 Touch Optimized
+                        p
+                            | Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
+                    section(data-markdown='')
+                        script(type='text/template').
+                            ## Markdown support
+                            Write content using inline or external Markdown.
+                            Instructions and more info available in the [docs](https://revealjs.com/markdown/).
+                            ```html []
+                            <section data-markdown>
+                            ## Markdown support
+                            Write content using inline or external Markdown.
+                            Instructions and more info available in the [docs](https://revealjs.com/markdown/).
+                            </section>
+                            ```
+                    section
+                        p
+                            | Add the 
+                            code r-fit-text
+                            |  class to auto-size text
+                        h2.r-fit-text FIT TEXT
+                    section
+                        section#fragments
+                            h2 Fragments
+                            p Hit the next arrow...
+                            p.fragment ... to step through ...
+                            p
+                                span.fragment ... a
+                                span.fragment fragmented
+                                span.fragment slide.
+                            aside.notes
+                                | This slide has fragments which are also stepped through in the notes window.
+                        section
+                            h2 Fragment Styles
+                            p There&apos;s different types of fragments, like:
+                            p.fragment.grow grow
+                            p.fragment.shrink shrink
+                            p.fragment.fade-out fade-out
+                            p
+                                span.fragment.fade-right(style='display: inline-block;') fade-right, 
+                                span.fragment.fade-up(style='display: inline-block;') up, 
+                                span.fragment.fade-down(style='display: inline-block;') down, 
+                                span.fragment.fade-left(style='display: inline-block;') left
+                            p.fragment.fade-in-then-out fade-in-then-out
+                            p.fragment.fade-in-then-semi-out fade-in-then-semi-out
+                            p
+                                | Highlight 
+                                span.fragment.highlight-red red
+                                span.fragment.highlight-blue blue
+                                span.fragment.highlight-green green
+                    section#transitions
+                        h2 Transition Styles
+                        p
+                            | You can select from different transitions, like: 
+                            br
+                            a(href='?transition=none#/transitions') None
+                            |  -
+                            a(href='?transition=fade#/transitions') Fade
+                            |  -
+                            a(href='?transition=slide#/transitions') Slide
+                            |  -
+                            a(href='?transition=convex#/transitions') Convex
+                            |  -
+                            a(href='?transition=concave#/transitions') Concave
+                            |  -
+                            a(href='?transition=zoom#/transitions') Zoom
+                    section#themes
+                        h2 Themes
+                        p
+                            | reveal.js comes with a few themes built in: 
+                            br
+                            // Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck.
+                            a(href='#' onclick="document.getElementById('theme').setAttribute('href','dist/theme/black.css'); return false;") Black (default)
+                            |  -
+                            a(href='#' onclick="document.getElementById('theme').setAttribute('href','dist/theme/white.css'); return false;") White
+                            |  -
+                            a(href='#' onclick="document.getElementById('theme').setAttribute('href','dist/theme/league.css'); return false;") League
+                            |  -
+                            a(href='#' onclick="document.getElementById('theme').setAttribute('href','dist/theme/sky.css'); return false;") Sky
+                            |  -
+                            a(href='#' onclick="document.getElementById('theme').setAttribute('href','dist/theme/beige.css'); return false;") Beige
+                            |  -
+                            a(href='#' onclick="document.getElementById('theme').setAttribute('href','dist/theme/simple.css'); return false;") Simple
+                            br
+                            a(href='#' onclick="document.getElementById('theme').setAttribute('href','dist/theme/serif.css'); return false;") Serif
+                            |  -
+                            a(href='#' onclick="document.getElementById('theme').setAttribute('href','dist/theme/blood.css'); return false;") Blood
+                            |  -
+                            a(href='#' onclick="document.getElementById('theme').setAttribute('href','dist/theme/night.css'); return false;") Night
+                            |  -
+                            a(href='#' onclick="document.getElementById('theme').setAttribute('href','dist/theme/moon.css'); return false;") Moon
+                            |  -
+                            a(href='#' onclick="document.getElementById('theme').setAttribute('href','dist/theme/solarized.css'); return false;") Solarized
+                    section
+                        section(data-background='#dddddd')
+                            h2 Slide Backgrounds
+                            p
+                                | Set 
+                                code data-background=&quot;#dddddd&quot;
+                                |  on a slide to change the background color. All CSS color formats are supported.
+                            a.navigate-down(href='#')
+                                img.r-frame(style='background: rgba(255,255,255,0.1);' width='178' height='238' data-src='https://static.slid.es/reveal/arrow.png' alt='Down arrow')
+                        section(data-background='https://static.slid.es/reveal/image-placeholder.png')
+                            h2 Image Backgrounds
+                            pre.
+
+                        section(data-background='https://static.slid.es/reveal/image-placeholder.png' data-background-repeat='repeat' data-background-size='100px')
+                            h2 Tiled Backgrounds
+                            pre.
+
+                        section(data-background-video='https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4' data-background-color='#000000')
+                            div(style='background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;')
+                                h2 Video Backgrounds
+                                pre.
+
+                        section(data-background='http://i.giphy.com/90F8aUepslB84.gif')
+                            h2 ... and GIFs!
+                    section(data-transition='slide' data-background='#4d7e65' data-background-transition='zoom')
+                        h2 Background Transitions
+                        p
+                            | Different background transitions are available via the backgroundTransition option. This one&apos;s called &quot;zoom&quot;.
+                        pre.
+
+                    section(data-transition='slide' data-background='#b5533c' data-background-transition='zoom')
+                        h2 Background Transitions
+                        p
+                            | You can override background transitions per-slide.
+                        pre.
+
+                    section(data-background-iframe='https://hakim.se' data-background-interactive='')
+                        div(style='position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;')
+                            h2 Iframe Backgrounds
+                            p
+                                | Since reveal.js runs on the web, you can easily embed other web content. Try interacting with the page in the background.
+                    section
+                        h2 Marvelous List
+                        ul
+                            li No order here
+                            li Or here
+                            li Or here
+                            li Or here
+                    section
+                        h2 Fantastic Ordered List
+                        ol
+                            li One is smaller than...
+                            li Two is smaller than...
+                            li Three!
+                    section
+                        h2 Tabular Tables
+                        table
+                            thead
+                                tr
+                                    th Item
+                                    th Value
+                                    th Quantity
+                            tbody
+                                tr
+                                    td Apples
+                                    td $1
+                                    td 7
+                                tr
+                                    td Lemonade
+                                    td $2
+                                    td 18
+                                tr
+                                    td Bread
+                                    td $3
+                                    td 2
+                    section
+                        h2 Clever Quotes
+                        p
+                            | These guys come in two forms, inline: 
+                            q(cite='http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations') The nice thing about standards is that there are so many to choose from
+                            |  and block:
+                        blockquote(cite='http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations')
+                            | &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+                            | reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+                    section
+                        h2 Intergalactic Interconnections
+                        p
+                            | You can link between slides internally,
+                            a(href='#/2/3') like this
+                            | .
+                    section
+                        h2 Speaker View
+                        p
+                            | There&apos;s a 
+                            a(href='https://revealjs.com/speaker-view/') speaker view
+                            | . It includes a timer, preview of the upcoming slide as well as your speaker notes.
+                        p
+                            | Press the 
+                            em S
+                            |  key to try it out.
+                        aside.notes
+                            | Oh hey, these are some notes. They&apos;ll be hidden in your presentation, but you can see them if you open the speaker notes window (hit &apos;s&apos; on your keyboard).
+                    section
+                        h2 Export to PDF
+                        p
+                            | Presentations can be 
+                            a(href='https://revealjs.com/pdf-export/') exported to PDF
+                            | , here&apos;s an example:
+                        iframe(data-src='https://www.slideshare.net/slideshow/embed_code/42840540' width='445' height='355' frameborder='0' marginwidth='0' marginheight='0' scrolling='no' style='border:3px solid #666; margin-bottom:5px; max-width: 100%;' allowfullscreen='')  
+                    section
+                        h2 Global State
+                        p
+                            | Set 
+                            code data-state=&quot;something&quot;
+                            |  on a slide and 
+                            code &quot;something&quot;
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;will be added as a class to the document element when the slide is open. This lets you
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;apply broader style changes, like switching the page background.
+                    section(data-state='customevent')
+                        h2 State Events
+                        p
+                            | Additionally custom events can be triggered on a per slide basis by binding to the 
+                            code data-state
+                            |  name.
+                        pre.
+
+                    section
+                        h2 Take a Moment
+                        p
+                            | Press B or . on your keyboard to pause the presentation. This is helpful when you&apos;re on stage and want to take distracting slides off the screen.
+                    section
+                        h2 Much more
+                        ul
+                            li Right-to-left support
+                            li
+                                a(href='https://revealjs.com/api/') Extensive JavaScript API
+                            li
+                                a(href='https://revealjs.com/auto-slide/') Auto-progression
+                            li
+                                a(href='https://revealjs.com/backgrounds/#parallax-background') Parallax backgrounds
+                            li
+                                a(href='https://revealjs.com/keyboard/') Custom keyboard bindings
+                    section(style='text-align: left;')
+                        h1 THE END
+                        p
+                            | - 
+                            a(href='https://slides.com') Try the online editor
+                            br
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;- 
+                            a(href='https://github.com/hakimel/reveal.js') Source code &amp; documentation
+
+
+
+        script(src='/reveal.js/plugin/zoom/zoom.js')
+        script(src='/reveal.js/plugin/notes/notes.js')
+        script(src='/reveal.js/plugin/search/search.js')
+        script(src='/reveal.js/plugin/markdown/markdown.js')
+        script(src='/reveal.js/plugin/highlight/highlight.js')
+        script(src="/reveal.js/dist/reveal.js" type="text/javascript")
+        block reveal-init 
+            script. 
+                Reveal.initialize({
+                    controls: true,
+                    progress: true,
+                    center: true,
+                    hash: true,
+
+                    plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+                });
