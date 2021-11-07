@@ -1,0 +1,19 @@
+{
+  "name": "slides-deck",
+  "version": "1.0.0",
+  "description": "slides-deck is a personal project for making slides using Gulp + Pug + Reveal.js",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp",
+    "build": "gulp build",
+    "watch": "gulp watch"
+  },
+  "author": "Mehran Kamal",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-pug": "^5.0.0",
+    "pug": "^3.0.2"
+  }
+}
