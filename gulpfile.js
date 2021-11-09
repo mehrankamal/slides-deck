@@ -7,7 +7,7 @@ const browserSync = require('browser-sync');
 var paths = {
   base: 'dist/',
   pug: {
-    src: 'src/index.pug',
+    src: 'src/**/*.pug',
     dest: 'dist/'
   },
   slidesPug: {
@@ -51,26 +51,20 @@ function pug() {
     .pipe(gulp.dest(paths.pug.dest));
 }
 
-function slides() {
-  return gulp.src(paths.slidesPug.src)
-    .pipe(gulpPug())
-    .pipe(gulp.dest(paths.slidesPug.dest));
-}
-
 function watch() {
-  gulp.watch(paths.pug.src, gulp.series(pug, previewReload));
-  gulp.watch(paths.slidesPug.src, gulp.series(slides, previewReload));
+  gulp.watch(paths.pug.src, gulp.series(build, previewReload));
 }
 
 var dev = gulp.series(
   clean,
-  gulp.parallel(pug, slides, styles),
+  gulp.parallel(pug, styles),
   livePreview,
   watch
 );
 
-var build = gulp.series(clean, gulp.parallel(pug, slides, styles));
+var build = gulp.series(clean, gulp.parallel(pug, styles));
 
+exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
 exports.dev = dev;

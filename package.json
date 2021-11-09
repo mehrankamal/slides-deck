@@ -7,7 +7,9 @@
     "gulp": "gulp",
     "build": "gulp build",
     "watch": "gulp watch",
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "clean": "gulp clean",
+    "clean-build": "gulp clean && gulp build"
   },
   "author": "Mehran Kamal",
   "license": "ISC",
